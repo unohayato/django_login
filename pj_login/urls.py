@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
-from registration import veiws, views
+from registration import views
 index_view = TemplateView.as_view(template_name="registration/index.html")
 
 urlpatterns = [

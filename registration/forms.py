@@ -1,11 +1,9 @@
-from dataclasses import fields
-from pkgutil import ImpImporter
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.conf import settings
 
-User = get_user_model
+User = get_user_model()
 
 class SignUpForm(UserCreationForm):
   class Meta:
