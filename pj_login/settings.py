@@ -130,3 +130,5 @@ LOGOUT_REDIRECT_URL = '/login/'
 #SECURE_SSL_REDIRECT = True
 
 AUTH_USER_MODEL = 'registration.User'
+
+FRONTEND_URL = 'http://127.0.0.1:8000/'
