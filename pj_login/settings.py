@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from unittest.mock import DEFAULT
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -120,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -132,3 +134,12 @@ LOGOUT_REDIRECT_URL = '/login/'
 AUTH_USER_MODEL = 'registration.User'
 
 FRONTEND_URL = 'http://127.0.0.1:8000'
+
+ANYMAIL = {
+    'MAILGUN_API_KEY': 'bfc199e7f348b5194af94fd023e56607-4dd50799-0268eca5',
+    'MAILGUN_SENDER_DOMAIN': 'sandbox12fe4927a891461bb995fb08bc2b6cea.mailgun.org',
+}
+
+EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+DEFAULT_FROM_EMAIL = 'mamidori1p1p@gmail.com'
+SERVER_EMAIL = 'mamidori1p1p@gmail.com'
